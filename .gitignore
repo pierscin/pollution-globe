@@ -1,0 +1,14 @@
+.idea/
+__pycache__/
+venv/
+*.pyc
+*.db
+sandbox.py
+*.swp
+*.zip
+.DS_Store
+node/
+*.cache
+*.java
+*.class
+*sandbox*
