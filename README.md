@@ -5,9 +5,6 @@ Pollution globe visualizes air quality around the world using
 [WebGL Globe](https://experiments.withgoogle.com/chrome/globe) and data from
 [aqicn](http://aqicn.org/).
 
-## How it looks
-
-![Working pollution globe image](globe.png)
 
 ## Quick setup
 
@@ -27,8 +24,3 @@ python runner.py
 
 
 Open `localhost:5000` in your browser.
-<p align='center'>
-
-![Terminal gif](terminal.gif)
-
-</p>
