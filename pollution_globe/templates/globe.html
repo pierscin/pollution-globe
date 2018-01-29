@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div id="container">
+    <div id="globe"></div>
+    <div id="title">
+      Air Quality Index (AQI) around the world
+      <div style="font-size: 13px;">data from last hour</div>
+    </div>
+    <div id="legend">
+      <table class="table">
+        <tbody>
+        <tr><th></th>
+          <th>Air quality</th>
+          <th>Index</th></tr>
+        <tr>
+          <td><div class="legend-color" style="background-color: #00ee00;"></div></td>
+          <td>Excellent</td>
+          <td>0 - 50</td>
+        </tr>
+        <tr>
+          <td><div class="legend-color" style="background-color: #99dd00;"></div></td>
+          <td>Good</td>
+          <td>51 - 100</td>
+        </tr>
+        <tr>
+          <td><div class="legend-color" style="background-color: #ffff00;"></div></td>
+          <td>Lightly polluted</td>
+          <td>101 - 150</td>
+        </tr>
+        <tr>
+          <td><div class="legend-color" style="background-color: #ff7700;"></div></td>
+          <td>Moderately polluted</td>
+          <td>151 - 200</td>
+        </tr>
+        <tr>
+          <td><div class="legend-color" style="background-color: #ff0000;"></div></td>
+          <td>Heavily polluted</td>
+          <td>151 - 200</td>
+        </tr>
+        <tr>
+          <td><div class="legend-color" style="background-color: #990044;"></div></td>
+          <td>Severely polluted</td>
+          <td>300+</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="https://github.com/pierscin/pollution-globe">
+      <img style="position: absolute; top: 0; right: 0; border: 0;"
+           src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67"
+           alt="Fork me on GitHub"
+           data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png">
+    </a>
+    <footer>
+      <div>Visualized with <a href="https://experiments.withgoogle.com/chrome/globe">WebGL Globe</a></div>
+      <div>Data taken from <a href="http://aqicn.org">aqicn.org</a></div>
+    </footer>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.0/superagent.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/69/three.min.js"></script>
+  <script src="{{ url_for('static', filename='js/lib/Detector.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/lib/globe.js') }}"></script>
+  <script>
+    var globe = DAT.Globe(document.getElementById('globe'), {
+        colorFn: function(label) {
+           return new THREE.Color([
+             0x00ee00, 0x99dd00, 0xffff00, 0xff7700, 0xff0000, 0x990044][label]);
+        },
+         imgDir: '/static/'
+      });
+
+      superagent
+        .get('/data/')
+        .end(function(err, res) {
+          var data = res.body;
+          window.data = data;
+
+          globe.addData(data, {format: 'legend'});
+          globe.createPoints();
+          globe.animate();
+        });
+  </script>
+{% endblock  %}
