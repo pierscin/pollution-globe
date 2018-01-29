@@ -13,7 +13,7 @@ def initialize_data():
 
 
 @app.route('/')
-def index_a():
+def index():
     return render_template('globe.html', title="pollution-globe")
 
 
