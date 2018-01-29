@@ -27,5 +27,8 @@ python runner.py
 
 
 Open `localhost:5000` in your browser.
+<p align='center'>
 
 ![Terminal gif](terminal.gif)
+
+</p>
