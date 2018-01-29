@@ -24,3 +24,8 @@ python runner.py
 
 
 Open `localhost:5000` in your browser.
+
+
+<p align='center'>
+<img src='https://cdn.rawgit.com/pierscin/pollution-globe/57fe0853/term.gif' alt='setup and run'>
+</p>
