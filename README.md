@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/pierscin/pollution-globe.svg?branch=master)](https://travis-ci.org/pierscin/pollution-globe)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/pierscin/pollution-globe/master/LICENSE)
 
 # Pollution globe
