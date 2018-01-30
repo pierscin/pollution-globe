@@ -1,3 +1,5 @@
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/pierscin/pollution-globe/master/LICENSE)
+
 # Pollution globe
 
 ### [How it looks](https://cdn.rawgit.com/pierscin/pollution-globe/6c7ca946/globe.png)
