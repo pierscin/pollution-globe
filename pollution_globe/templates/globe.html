@@ -63,8 +63,8 @@
   {{ super() }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.0/superagent.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/69/three.min.js"></script>
-  <script src="{{ url_for('static', filename='js/lib/Detector.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/lib/globe.js') }}"></script>
+  <script src="https://cdn.rawgit.com/dataarts/webgl-globe/master/globe/third-party/Detector.js"></script>
+  <script src="https://cdn.rawgit.com/dataarts/webgl-globe/master/globe/globe.js"></script>
   <script>
     var globe = DAT.Globe(document.getElementById('globe'), {
         colorFn: function(label) {
