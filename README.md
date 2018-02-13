@@ -3,7 +3,7 @@
 
 # Pollution globe
 
-### [How it looks](https://cdn.rawgit.com/pierscin/pollution-globe/6c7ca946/globe.png)
+### [View demo with old data](http://pierscin.pythonanywhere.com)
 
 Pollution globe visualizes air quality around the world using
 [WebGL Globe](https://experiments.withgoogle.com/chrome/globe) and data from
