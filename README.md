@@ -3,8 +3,6 @@
 
 # Pollution globe
 
-### [View demo with old data](http://pierscin.pythonanywhere.com)
-
 Pollution globe visualizes air quality around the world using
 [WebGL Globe](https://experiments.withgoogle.com/chrome/globe) and data from
 [aqicn](http://aqicn.org/).
